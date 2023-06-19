@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const WrapperStyled = styled.div`
-  background-color: #eef972;
+  /* background-color: #eef972; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,23 +10,22 @@ export const WrapperStyled = styled.div`
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   padding: 20px;
-  height: 200px;
 `;
 
 export const Image = styled.img`
-  background-color: #94efef;
-  height: 50%;
+  /* background-color: #94efef; */
+  height: 150px;
 `;
 export const DetailsWrapperStyled = styled.div`
-  background-color: aliceblue;
-  height: 50%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: aliceblue; */
   text-align: center;
 `;
 
 export const NameStyled = styled.div`
   font-weight: 600;
   color: #979797;
-  margin-bottom: 5px;
 `;
 
 export const TaglineStyled = styled.div`
