@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const WrapperStyled = styled.div`
   background-color: #eef972;
@@ -27,9 +27,9 @@ export const NameStyled = styled.div`
   font-weight: 600;
   color: #979797;
   margin-bottom: 5px;
-`
+`;
 
 export const TaglineStyled = styled.div`
   color: #979797;
   font-size: 0.8em;
-`
+`;
