@@ -26,8 +26,10 @@ export const DetailsWrapperStyled = styled.div`
 export const NameStyled = styled.div`
   font-weight: 600;
   color: #979797;
+  margin-bottom: 5px;
 `
 
 export const TaglineStyled = styled.div`
   color: #979797;
+  font-size: 0.8em;
 `

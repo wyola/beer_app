@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
+import { WrapperStyled } from "./BeerList.styled";
 import { Beer, Beers } from "./types";
 
 export const BeerList = () => {
@@ -14,7 +15,7 @@ export const BeerList = () => {
   }, []);
 
   return (
-    <>
+    <WrapperStyled>
       {beers.map((beer: Beer) => (
         <BeerTile
           key={beer.id}
@@ -23,6 +24,6 @@ export const BeerList = () => {
           tagline={beer.tagline}
         />
       ))}
-    </>
+    </WrapperStyled>
   );
 };
