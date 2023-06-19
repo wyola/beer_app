@@ -7,7 +7,7 @@ import {
   NameStyled,
   TaglineStyled,
 } from "./BeerTile.styled";
-import { SeparatorStyled } from "./Separator";
+import { Separator } from "./Separator";
 
 export type BeerTileProps = {
   imageSource?: string;
@@ -21,7 +21,7 @@ export const BeerTile = ({ imageSource, name, tagline }: BeerTileProps) => {
       <Image alt={`Image of ${name} beer`} src={imageSource} />
       <DetailsWrapperStyled>
         <NameStyled>{name}</NameStyled>
-        <SeparatorStyled/>
+        <Separator/>
         <TaglineStyled>{tagline}</TaglineStyled>
       </DetailsWrapperStyled>
     </WrapperStyled>

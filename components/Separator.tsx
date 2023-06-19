@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const SeparatorStyled = styled.div`
+export const Separator = styled.div`
   text-align: center;
   position: relative;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   ::before {
     content: " ";
