@@ -1,7 +1,15 @@
+"use client";
+
+import { BeerList } from "@/components/BeerList";
+
+
 export default function Home() {
+
+
   return (
     <main>
-      <div>hello world !!!</div>
+      <BeerList/>
+
     </main>
   );
 }
