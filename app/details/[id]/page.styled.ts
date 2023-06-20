@@ -27,6 +27,8 @@ export const ImageStyled = styled.img`
 
 export const DescriptionWrapperStyled = styled.div`
   display: flex;
+  flex: 1;
+  align-self: stretch;
   flex-direction: column;
   gap: 20px;
 

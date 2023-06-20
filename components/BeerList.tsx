@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
+import { BeerTileSkeleton } from "./BeerTileSkeleton";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { WrapperStyled, PaginationWrapperStyled } from "./BeerList.styled";
 import { Beer } from "./types";
 
@@ -15,6 +17,8 @@ export const BeerList = () => {
       .then((beers) => setBeers(beers));
   }, [page]);
 
+  console.log(beers.length);
+
   function goForward() {
     setPage((page) => page + 1);
   }
@@ -26,9 +30,11 @@ export const BeerList = () => {
   return (
     <>
       <WrapperStyled>
-        {beers.map((beer: Beer) => (
-          <BeerTile key={beer.id} beer={beer} />
-        ))}
+        {beers.length
+          ? beers.map((beer: Beer) => <BeerTile key={beer.id} beer={beer} />)
+          : new Array(12)
+              .fill(0)
+              .map((_, index) => <BeerTileSkeleton key={index} />)}
       </WrapperStyled>
       <PaginationWrapperStyled>
         <button onClick={goBack} disabled={page < 2}>

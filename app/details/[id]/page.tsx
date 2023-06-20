@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PageHeader } from "@/components/PageHeader";
+import { DetailsSkeleton } from "./DetailsSkeleton";
 import { Beer } from "@/components/types";
 import {
   PageWrapperStyled,
@@ -32,28 +33,34 @@ export default function BeerPage({ params }: PageProps) {
 
   return (
     <main>
-      <PageHeader>{beer?.name}</PageHeader>
-      <PageWrapperStyled>
-        <ImageStyled
-          alt={`Image of ${beer?.name} beer`}
-          src={beer?.image_url}
-        />
-        <DescriptionWrapperStyled>
-          <h2>{beer?.tagline}</h2>
-          <span>{beer?.description}</span>
-          <div>
-            <h3>Details:</h3>
-            <span>abv: {beer?.abv}%</span>
-            <span>ibu: {beer?.ibu}</span>
-          </div>
-          <div>
-            <h3>Ingredients:</h3>
-            <span>Malt: {malt}</span>
-            <span>Hops: {hops}</span>
-            <span>Yeast: {yeast}</span>
-          </div>
-        </DescriptionWrapperStyled>
-      </PageWrapperStyled>
+      {beer ? (
+        <>
+          <PageHeader>{beer?.name}</PageHeader>
+          <PageWrapperStyled>
+            <ImageStyled
+              alt={`Image of ${beer?.name} beer`}
+              src={beer?.image_url}
+            />
+            <DescriptionWrapperStyled>
+              <h2>{beer?.tagline}</h2>
+              <span>{beer?.description}</span>
+              <div>
+                <h3>Details:</h3>
+                <span>abv: {beer?.abv}%</span>
+                <span>ibu: {beer?.ibu}</span>
+              </div>
+              <div>
+                <h3>Ingredients:</h3>
+                <span>Malt: {malt}</span>
+                <span>Hops: {hops}</span>
+                <span>Yeast: {yeast}</span>
+              </div>
+            </DescriptionWrapperStyled>
+          </PageWrapperStyled>
+        </>
+      ) : (
+        <DetailsSkeleton/>
+      )}
     </main>
   );
 }
