@@ -7,6 +7,7 @@ export const Trapezoid = styled.h1`
   color: orange;
   padding: 70px;
   margin: 0;
+  font-size: 3em;
 
   ::before {
     position: absolute;

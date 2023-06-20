@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import Link from "next/link";
 
-export const WrapperStyled = styled.div`
-  /* background-color: #eef972; */
+export const LinkStyled = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,16 +10,20 @@ export const WrapperStyled = styled.div`
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   padding: 20px;
+  text-decoration: none;
+  
+  &:hover {
+    border-color: orange;
+    /* background-color: #ffa6004b; */
+  }
 `;
 
 export const Image = styled.img`
-  /* background-color: #94efef; */
   height: 150px;
 `;
 export const DetailsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-color: aliceblue; */
   text-align: center;
 `;
 

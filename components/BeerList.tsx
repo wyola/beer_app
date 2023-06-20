@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
 import { WrapperStyled } from "./BeerList.styled";
-import { Beer, Beers } from "./types";
+import { Beer } from "./types";
 
 export const BeerList = () => {
-  const [beers, setBeers] = useState<Beers>([]);
+  const [beers, setBeers] = useState<Beer[]>([]);
 
   useEffect(() => {
     fetch("https://api.punkapi.com/v2/beers")
@@ -19,9 +19,7 @@ export const BeerList = () => {
       {beers.map((beer: Beer) => (
         <BeerTile
           key={beer.id}
-          imageSource={beer.image_url}
-          name={beer.name}
-          tagline={beer.tagline}
+          beer={beer}
         />
       ))}
     </WrapperStyled>

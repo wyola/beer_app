@@ -1,29 +1,28 @@
 "use client";
 
 import {
-  WrapperStyled,
+  LinkStyled,
   Image,
   DetailsWrapperStyled,
   NameStyled,
   TaglineStyled,
 } from "./BeerTile.styled";
 import { Separator } from "./Separator";
+import { Beer } from "./types";
 
 export type BeerTileProps = {
-  imageSource?: string;
-  name?: string;
-  tagline?: string;
+  beer: Beer;
 };
 
-export const BeerTile = ({ imageSource, name, tagline }: BeerTileProps) => {
+export const BeerTile = ({beer }: BeerTileProps) => {
   return (
-    <WrapperStyled>
-      <Image alt={`Image of ${name} beer`} src={imageSource} />
+    <LinkStyled href={`/details/${beer.id}`}>
+      <Image alt={`Image of ${beer.name} beer`} src={beer.image_url} />
       <DetailsWrapperStyled>
-        <NameStyled>{name}</NameStyled>
+        <NameStyled>{beer.name}</NameStyled>
         <Separator/>
-        <TaglineStyled>{tagline}</TaglineStyled>
+        <TaglineStyled>{beer.tagline}</TaglineStyled>
       </DetailsWrapperStyled>
-    </WrapperStyled>
+    </LinkStyled>
   );
 };
