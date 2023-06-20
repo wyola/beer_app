@@ -25,6 +25,7 @@ export default function BeerPage({ params }: PageProps) {
   }, [params.id]);
 
   // prepare ingredients
+  // TODO: set - unique values for hops
   const malt = beer?.ingredients.malt.map((malt) => malt.name).join(", ");
   const hops = beer?.ingredients.hops.map((hops) => hops.name).join(", ");
   const yeast = beer?.ingredients.yeast;
