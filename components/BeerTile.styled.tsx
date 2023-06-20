@@ -11,14 +11,13 @@ export const LinkStyled = styled(Link)`
   border-radius: 5px;
   padding: 20px;
   text-decoration: none;
-  
+
   &:hover {
     border-color: orange;
-    /* background-color: #ffa6004b; */
   }
 `;
 
-export const Image = styled.img`
+export const ImageStyled = styled.img`
   height: 150px;
 `;
 export const DetailsWrapperStyled = styled.div`

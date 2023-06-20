@@ -17,10 +17,7 @@ export const BeerList = () => {
   return (
     <WrapperStyled>
       {beers.map((beer: Beer) => (
-        <BeerTile
-          key={beer.id}
-          beer={beer}
-        />
+        <BeerTile key={beer.id} beer={beer} />
       ))}
     </WrapperStyled>
   );

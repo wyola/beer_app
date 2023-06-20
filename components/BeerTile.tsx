@@ -2,7 +2,7 @@
 
 import {
   LinkStyled,
-  Image,
+  ImageStyled,
   DetailsWrapperStyled,
   NameStyled,
   TaglineStyled,
@@ -14,13 +14,13 @@ export type BeerTileProps = {
   beer: Beer;
 };
 
-export const BeerTile = ({beer }: BeerTileProps) => {
+export const BeerTile = ({ beer }: BeerTileProps) => {
   return (
     <LinkStyled href={`/details/${beer.id}`}>
-      <Image alt={`Image of ${beer.name} beer`} src={beer.image_url} />
+      <ImageStyled alt={`Image of ${beer.name} beer`} src={beer.image_url} />
       <DetailsWrapperStyled>
         <NameStyled>{beer.name}</NameStyled>
-        <Separator/>
+        <Separator />
         <TaglineStyled>{beer.tagline}</TaglineStyled>
       </DetailsWrapperStyled>
     </LinkStyled>
