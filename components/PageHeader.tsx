@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Trapezoid = styled.h1`
+export const PageHeader = styled.h1`
   position: relative;
   overflow: hidden;
   text-align: center;
