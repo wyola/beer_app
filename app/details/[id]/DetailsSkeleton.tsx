@@ -1,6 +1,5 @@
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 import { PageHeader } from "@/components/PageHeader";
-import "react-loading-skeleton/dist/skeleton.css";
 
 import {
   PageWrapperStyled,
@@ -9,9 +8,9 @@ import {
 
 export const DetailsSkeleton = () => {
   return (
-    <SkeletonTheme>
+    <>
       <PageHeader>
-        <Skeleton height={"100%"} />
+        <Skeleton height={"100%"} width={150} />
       </PageHeader>
       <PageWrapperStyled>
         <div>
@@ -32,6 +31,6 @@ export const DetailsSkeleton = () => {
           </div>
         </DescriptionWrapperStyled>
       </PageWrapperStyled>
-    </SkeletonTheme>
+    </>
   );
 };

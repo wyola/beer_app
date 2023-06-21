@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
 import { BeerTileSkeleton } from "./BeerTileSkeleton";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { WrapperStyled, PaginationWrapperStyled } from "./BeerList.styled";
 import { Beer } from "./types";
 
