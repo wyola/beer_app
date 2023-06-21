@@ -11,6 +11,7 @@ export const LinkStyled = styled(Link)`
   border-radius: 5px;
   padding: 20px;
   text-decoration: none;
+  color: inherit;
 
   &:hover {
     border-color: orange;
@@ -20,6 +21,7 @@ export const LinkStyled = styled(Link)`
 export const ImageStyled = styled.img`
   height: 150px;
 `;
+
 export const DetailsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,10 +30,8 @@ export const DetailsWrapperStyled = styled.div`
 
 export const NameStyled = styled.div`
   font-weight: 600;
-  color: #979797;
 `;
 
 export const TaglineStyled = styled.div`
-  color: #979797;
   font-size: 0.8em;
 `;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
 import { Pagination } from "./Pagination";
 import { BeerTileSkeleton } from "./BeerTileSkeleton";
-import { WrapperStyled, ErrorMessageWrapperStyled } from "./BeerList.styled";
+import { BeerListWrapperStyled, ErrorMessageWrapperStyled } from "./BeerList.styled";
 import { Beer } from "./types";
 
 export const BeerList = () => {
@@ -40,13 +40,13 @@ export const BeerList = () => {
 
   return (
     <>
-      <WrapperStyled>
+      <BeerListWrapperStyled>
         {beers.length
           ? beers.map((beer: Beer) => <BeerTile key={beer.id} beer={beer} />)
           : new Array(pageSize)
               .fill(0)
               .map((_, index) => <BeerTileSkeleton key={index} />)}
-      </WrapperStyled>
+      </BeerListWrapperStyled>
       <Pagination
         pageSize={pageSize}
         onPageSizeChange={setPageSize}

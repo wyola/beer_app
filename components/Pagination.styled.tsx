@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PaginationWrapperStyled = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 20px 20px 20px;
+  margin-top: 20px;
   justify-content: space-between;
   font-size: 0.8em;
 `;

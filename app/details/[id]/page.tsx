@@ -5,7 +5,7 @@ import { PageLayout } from "@/app/PageLayout";
 import { DetailsSkeleton } from "./DetailsSkeleton";
 import { Beer } from "@/components/types";
 import {
-  PageWrapperStyled,
+  BeerPageWrapperStyled,
   ImageStyled,
   DescriptionWrapperStyled,
   LinkWrapperStyled,
@@ -54,7 +54,7 @@ export default function BeerPage({ params }: PageProps) {
     <>
       {beer ? (
         <PageLayout title={beer.name}>
-          <PageWrapperStyled>
+          <BeerPageWrapperStyled>
             <ImageStyled
               alt={`Image of ${beer?.name} beer`}
               src={beer?.image_url}
@@ -74,7 +74,7 @@ export default function BeerPage({ params }: PageProps) {
                 <span>Yeast: {yeast}</span>
               </div>
             </DescriptionWrapperStyled>
-          </PageWrapperStyled>
+          </BeerPageWrapperStyled>
         </PageLayout>
       ) : (
         <DetailsSkeleton />

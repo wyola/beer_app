@@ -1,16 +1,11 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const PageWrapperStyled = styled.div`
+export const BeerPageWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
   gap: 40px;
-  color: #979797;
 
   @media (min-width: 600px) {
     flex-direction: row;

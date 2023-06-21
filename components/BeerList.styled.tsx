@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperStyled = styled.div`
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+export const BeerListWrapperStyled = styled.div`
   display: grid;
   gap: 20px;
 
