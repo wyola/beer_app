@@ -12,9 +12,12 @@ export const LinkStyled = styled(Link)`
   padding: 20px;
   text-decoration: none;
   color: inherit;
+  transition: all .4s;
 
   &:hover {
     border-color: orange;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 5px #e1e1e1;
   }
 `;
 
