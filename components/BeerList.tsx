@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
+import { Pagination } from "./Pagination";
 import { BeerTileSkeleton } from "./BeerTileSkeleton";
-import {
-  WrapperStyled,
-  PaginationWrapperStyled,
-  ErrorMessageWrapperStyled,
-} from "./BeerList.styled";
+import { WrapperStyled, ErrorMessageWrapperStyled } from "./BeerList.styled";
 import { Beer } from "./types";
 
 export const BeerList = () => {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [pageSize, setPageSize] = useState(12);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://api.punkapi.com/v2/beers?per_page=12&page=${page}`)
+    fetch(`https://api.punkapi.com/v2/beers?per_page=${pageSize}&page=${page}`)
       .then((res) => res.json())
       .then((beers) => {
         setBeers(beers);
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
-  }, [page]);
+  }, [pageSize, page]);
 
   function goForward() {
     setPage((page) => page + 1);
@@ -45,19 +43,18 @@ export const BeerList = () => {
       <WrapperStyled>
         {beers.length
           ? beers.map((beer: Beer) => <BeerTile key={beer.id} beer={beer} />)
-          : new Array(12)
+          : new Array(pageSize)
               .fill(0)
               .map((_, index) => <BeerTileSkeleton key={index} />)}
       </WrapperStyled>
-      <PaginationWrapperStyled>
-        <button onClick={goBack} disabled={page < 2}>
-          {"<"}
-        </button>
-        <div>{page}</div>
-        <button onClick={goForward} disabled={beers.length < 12}>
-          {">"}
-        </button>
-      </PaginationWrapperStyled>
+      <Pagination
+        pageSize={pageSize}
+        onPageSizeChange={setPageSize}
+        page={page}
+        goBack={goBack}
+        goForward={goForward}
+        currentElementCount={beers.length}
+      />
     </>
   );
 };
