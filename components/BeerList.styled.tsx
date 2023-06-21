@@ -50,3 +50,11 @@ export const PaginationWrapperStyled = styled.div`
     }
   }
 `;
+
+export const ErrorMessageWrapperStyled = styled.div`
+  color: #7e6a9f;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

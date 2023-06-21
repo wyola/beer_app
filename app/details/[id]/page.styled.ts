@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const PageWrapperStyled = styled.div`
   display: flex;
@@ -46,5 +47,25 @@ export const DescriptionWrapperStyled = styled.div`
   > div > h3 {
     margin: 0 0 10px 0;
     font-weight: 600;
+  }
+`;
+
+export const LinkWrapperStyled = styled.div`
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LinkStyled = styled(Link)`
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #7e6a9f;
+  color: #7e6a9f;
+  font-size: 1.5em;
+
+  &:hover {
+    background-color: #7e6a9f;
+    color: white;
   }
 `;

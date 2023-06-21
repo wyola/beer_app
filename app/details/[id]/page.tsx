@@ -8,6 +8,8 @@ import {
   PageWrapperStyled,
   ImageStyled,
   DescriptionWrapperStyled,
+  LinkWrapperStyled,
+  LinkStyled,
 } from "./page.styled";
 
 type PageProps = {
@@ -18,17 +20,36 @@ type PageProps = {
 
 export default function BeerPage({ params }: PageProps) {
   const [beer, setBeer] = useState<Beer>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`https://api.punkapi.com/v2/beers/${params.id}`)
       .then((res) => res.json())
-      .then((beer) => setBeer(beer[0]));
+      .then((beer) => {
+        setBeer(beer[0]);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
   }, [params.id]);
 
   // prepare ingredients
   const malt = beer?.ingredients.malt.map((malt) => malt.name).join(", ");
-  const hops = Array.from(new Set(beer?.ingredients.hops.map((hops) => hops.name))).join(", ");
+  const hops = Array.from(
+    new Set(beer?.ingredients.hops.map((hops) => hops.name))
+  ).join(", ");
   const yeast = beer?.ingredients.yeast;
+
+  if (!isLoading && !beer) {
+    return (
+      <main>
+        <PageHeader>Beer not found!</PageHeader>
+        <LinkWrapperStyled>
+          <LinkStyled href="/">&#8592; go back to homepage</LinkStyled>
+        </LinkWrapperStyled>
+      </main>
+    );
+  }
 
   return (
     <main>
@@ -58,7 +79,7 @@ export default function BeerPage({ params }: PageProps) {
           </PageWrapperStyled>
         </>
       ) : (
-        <DetailsSkeleton/>
+        <DetailsSkeleton />
       )}
     </main>
   );
