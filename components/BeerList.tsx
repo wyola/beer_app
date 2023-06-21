@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
 import { BeerTileSkeleton } from "./BeerTileSkeleton";
@@ -18,11 +16,12 @@ export const BeerList = () => {
   useEffect(() => {
     setIsLoading(true);
     fetch(`https://api.punkapi.com/v2/beers?per_page=12&page=${page}`)
-    .then((res) => res.json())
-    .then((beers) => {
-      setBeers(beers);
-      setIsLoading(false);
-    }).catch(() => setIsLoading(false));
+      .then((res) => res.json())
+      .then((beers) => {
+        setBeers(beers);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
   }, [page]);
 
   function goForward() {

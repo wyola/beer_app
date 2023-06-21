@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PageHeader } from "@/components/PageHeader";
+import { PageLayout } from "@/app/PageLayout";
 import { DetailsSkeleton } from "./DetailsSkeleton";
 import { Beer } from "@/components/types";
 import {
@@ -33,7 +33,7 @@ export default function BeerPage({ params }: PageProps) {
       .catch(() => setIsLoading(false));
   }, [params.id]);
 
-  // prepare ingredients
+  // prepare data for ingredients
   const malt = beer?.ingredients.malt.map((malt) => malt.name).join(", ");
   const hops = Array.from(
     new Set(beer?.ingredients.hops.map((hops) => hops.name))
@@ -42,20 +42,18 @@ export default function BeerPage({ params }: PageProps) {
 
   if (!isLoading && !beer) {
     return (
-      <main>
-        <PageHeader>Beer not found!</PageHeader>
+      <PageLayout title="Beer not found :(">
         <LinkWrapperStyled>
           <LinkStyled href="/">&#8592; go back to homepage</LinkStyled>
         </LinkWrapperStyled>
-      </main>
+      </PageLayout>
     );
   }
 
   return (
-    <main>
+    <>
       {beer ? (
-        <>
-          <PageHeader>{beer?.name}</PageHeader>
+        <PageLayout title={beer.name}>
           <PageWrapperStyled>
             <ImageStyled
               alt={`Image of ${beer?.name} beer`}
@@ -77,10 +75,10 @@ export default function BeerPage({ params }: PageProps) {
               </div>
             </DescriptionWrapperStyled>
           </PageWrapperStyled>
-        </>
+        </PageLayout>
       ) : (
         <DetailsSkeleton />
       )}
-    </main>
+    </>
   );
 }

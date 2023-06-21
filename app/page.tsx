@@ -1,13 +1,12 @@
 "use client";
-import { PageHeader } from "@/components/PageHeader";
+
 import { BeerList } from "@/components/BeerList";
+import { PageLayout } from "./PageLayout";
 
 export default function Home() {
-  
   return (
-    <main>
-      <PageHeader>Beers</PageHeader>
+    <PageLayout title="Beers">
       <BeerList />
-    </main>
+    </PageLayout>
   );
 }
