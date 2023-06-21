@@ -44,7 +44,7 @@ export default function BeerPage({ params }: PageProps) {
     return (
       <PageLayout title="Beer not found :(">
         <LinkWrapperStyled>
-          <LinkButton href="/" label="&#8592; go back to homepage" />
+          <LinkButton href="/">&#8592; go back to homepage</LinkButton>
         </LinkWrapperStyled>
       </PageLayout>
     );
@@ -56,16 +56,16 @@ export default function BeerPage({ params }: PageProps) {
         <PageLayout title={beer.name}>
           <BeerPageWrapperStyled>
             <ImageStyled
-              alt={`Image of ${beer?.name} beer`}
-              src={beer?.image_url}
+              alt={`Image of ${beer.name} beer`}
+              src={beer.image_url}
             />
             <DescriptionWrapperStyled>
-              <h2>{beer?.tagline}</h2>
-              <span>{beer?.description}</span>
+              <h2>{beer.tagline}</h2>
+              <span>{beer.description}</span>
               <div>
                 <h3>Details:</h3>
-                <span>abv: {beer?.abv}%</span>
-                <span>ibu: {beer?.ibu}</span>
+                <span>abv: {beer.abv}%</span>
+                <span>ibu: {beer.ibu}</span>
               </div>
               <div>
                 <h3>Ingredients:</h3>
@@ -75,7 +75,7 @@ export default function BeerPage({ params }: PageProps) {
               </div>
             </DescriptionWrapperStyled>
           </BeerPageWrapperStyled>
-          <LinkButton href="/" label="&#8592; go back to homepage" />
+          <LinkButton href="/">&#8592; go back to homepage</LinkButton>
         </PageLayout>
       ) : (
         <DetailsSkeleton />

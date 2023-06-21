@@ -22,7 +22,10 @@ export const BeerList = () => {
         setBeers(beers);
         setIsLoading(false);
       })
-      .catch(() => setIsLoading(false));
+      .catch(() => {
+        setBeers([]);
+        setIsLoading(false);
+      });
   }, [pageSize, page]);
 
   function goForward() {

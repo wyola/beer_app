@@ -1,12 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-type LinkStyledProps = {
-  href: string;
-  label: string;
-};
-
-const LinkButtonStyled = styled(Link)`
+export const LinkButton = styled(Link)`
   text-decoration: none;
   padding: 10px 20px;
   border: 1px solid #7e6a9f;
@@ -19,7 +14,3 @@ const LinkButtonStyled = styled(Link)`
     color: white;
   }
 `;
-
-export const LinkButton = ({ href, label }: LinkStyledProps) => {
-  return <LinkButtonStyled href={href}>{label}</LinkButtonStyled>;
-};

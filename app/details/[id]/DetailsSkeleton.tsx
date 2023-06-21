@@ -5,7 +5,7 @@ import { BeerPageWrapperStyled, DescriptionWrapperStyled } from "./page.styled";
 
 export const DetailsSkeleton = () => {
   return (
-    <PageLayout title={<Skeleton height={"100%"} width={150} />}>
+    <PageLayout title={<Skeleton height="100%" width={150} />}>
       <BeerPageWrapperStyled>
         <div>
           <Skeleton width={190} height={410} />
