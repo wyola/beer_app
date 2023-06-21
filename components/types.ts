@@ -8,10 +8,10 @@ export type Beer = {
   ibu: number;
   ingredients: {
     malt: Array<{
-      name: string
+      name: string;
     }>;
     hops: Array<{
-      name: string
+      name: string;
     }>;
     yeast: string;
   };

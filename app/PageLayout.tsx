@@ -13,6 +13,11 @@ const PageContent = styled.div`
   margin-right: auto;
   padding: 20px;
   color: #979797;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export const PageLayout = ({ title, children }: PageLayoutProps) => {

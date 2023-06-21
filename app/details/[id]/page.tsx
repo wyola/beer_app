@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import { PageLayout } from "@/app/PageLayout";
 import { DetailsSkeleton } from "./DetailsSkeleton";
-import { Beer } from "@/components/types";
+import { LinkButton } from "@/components/LinkButton";
 import {
   BeerPageWrapperStyled,
   ImageStyled,
   DescriptionWrapperStyled,
   LinkWrapperStyled,
-  LinkStyled,
 } from "./page.styled";
+import { Beer } from "@/components/types";
 
 type PageProps = {
   params: {
@@ -44,7 +44,7 @@ export default function BeerPage({ params }: PageProps) {
     return (
       <PageLayout title="Beer not found :(">
         <LinkWrapperStyled>
-          <LinkStyled href="/">&#8592; go back to homepage</LinkStyled>
+          <LinkButton href="/" label="&#8592; go back to homepage" />
         </LinkWrapperStyled>
       </PageLayout>
     );
@@ -75,6 +75,7 @@ export default function BeerPage({ params }: PageProps) {
               </div>
             </DescriptionWrapperStyled>
           </BeerPageWrapperStyled>
+          <LinkButton href="/" label="&#8592; go back to homepage" />
         </PageLayout>
       ) : (
         <DetailsSkeleton />

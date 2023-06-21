@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { BeerTile } from "./BeerTile";
 import { Pagination } from "./Pagination";
 import { BeerTileSkeleton } from "./BeerTileSkeleton";
-import { BeerListWrapperStyled, ErrorMessageWrapperStyled } from "./BeerList.styled";
+import {
+  BeerListWrapperStyled,
+  ErrorMessageWrapperStyled,
+} from "./BeerList.styled";
 import { Beer } from "./types";
 
 export const BeerList = () => {

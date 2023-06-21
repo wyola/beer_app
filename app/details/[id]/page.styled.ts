@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Link from "next/link";
 
 export const BeerPageWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-bottom: 20px;
 
   @media (min-width: 600px) {
     flex-direction: row;
@@ -14,7 +14,7 @@ export const BeerPageWrapperStyled = styled.div`
 `;
 
 export const ImageStyled = styled.img`
-  height: 350px;
+  height: 370px;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   padding: 20px 50px;
@@ -50,17 +50,4 @@ export const LinkWrapperStyled = styled.div`
   height: 50vh;
   align-items: center;
   justify-content: center;
-`;
-
-export const LinkStyled = styled(Link)`
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid #7e6a9f;
-  color: #7e6a9f;
-  font-size: 1.5em;
-
-  &:hover {
-    background-color: #7e6a9f;
-    color: white;
-  }
 `;

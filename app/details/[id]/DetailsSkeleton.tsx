@@ -8,7 +8,7 @@ export const DetailsSkeleton = () => {
     <PageLayout title={<Skeleton height={"100%"} width={150} />}>
       <BeerPageWrapperStyled>
         <div>
-          <Skeleton width={190} height={390} />
+          <Skeleton width={190} height={410} />
         </div>
         <DescriptionWrapperStyled>
           <h2>
